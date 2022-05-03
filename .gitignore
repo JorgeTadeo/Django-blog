@@ -2,7 +2,7 @@
 *.bak
 
 # Database
-*.sqlite3gi
+*.sqlite3
 
 # virtual environment
 venv/
