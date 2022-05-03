@@ -1,0 +1,8 @@
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3gi
+
+# virtual environment
+venv/
