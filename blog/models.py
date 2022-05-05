@@ -28,3 +28,18 @@ class BlogPost(models.Model):
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this post."""
         return reverse('blog-post-detail', args=[str(self.id)])
+
+class Author(models.Model):
+    user = models.CharField(max_length=200)
+    bio = models.TextField(max_length=1000, help_text='Enter a biography')
+
+    class Meta:
+        ordering=['user']
+
+    def __str___(self):
+        """String for representing Author object."""
+        return self.user
+    
+    def get_absolute_url(self):
+        """Returns the URL to access a deatil record for this user."""
+        return reverse('author-detail', args=[str(self.id)])
