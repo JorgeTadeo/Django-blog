@@ -16,7 +16,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     post_date = models.DateField(auto_now_add=True)
     # A blog post may only have one author but many authors can have many blog posts
-    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey('Author', on_delete=models.CASCADE)
     # A text field that holds the contents of our blog post
     description = models.TextField(max_length=1000, help_text='Enter a description for you post')
     # A Blog Post can have many topics and a topic can be applied to many blog posts
@@ -51,7 +51,7 @@ class Author(models.Model):
 
 class Comment(models.Model):
     # Every comment must have an Author and Authors can have many comments
-    author = models.ForeignKey(Author, on_delete=models.SET_NULL)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
     # A text field of what comment is 
     description = models.TextField(max_length=300, help_text='Enter comment about blog here')
