@@ -35,13 +35,13 @@ class BlogPost(models.Model):
         return reverse('blog-post-detail', args=[str(self.id)])
 
 class Author(models.Model):
-    user = models.CharField(max_length=200)
+    user = models.CharField(max_length=100)
     bio = models.TextField(max_length=1000, help_text='Enter a biography')
 
     class Meta:
         ordering=['user']
 
-    def __str___(self):
+    def __str__(self):
         """String for representing Author object."""
         return self.user
     
@@ -64,4 +64,4 @@ class Comment(models.Model):
     
     def __str__(self):
         """String for representing Comment object."""
-        return f'{self.post_date} - {self.author.user} - {self.description}'
+        return f'{self.blogpost.title} - {self.author.user} - {self.description}'
