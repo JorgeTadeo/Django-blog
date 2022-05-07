@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Topic, BlogPost, Author, Comment
-import django.views import generic
+from django.views import generic
 
 def index(request):
     """View function for home page of site."""
