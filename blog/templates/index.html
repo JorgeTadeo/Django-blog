@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Jorge Tadeo's blog</h1>
+  <p>Welcome to my blog, a website developed by <em>me</em>!</p>
+  <h2>Blog content</h2>
+  <p>The blog has the following record counts:</p>
+  <ul>
+    <li><strong>Blog Posts:</strong> {{ num_blogposts }}</li>
+    <li><strong>Total comments:</strong> {{ num_comments }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Topics:</strong> {{ num_topics }}</li>
+  </ul>
+{% endblock %}

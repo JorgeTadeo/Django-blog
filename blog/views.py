@@ -7,11 +7,13 @@ def index(request):
     num_blogposts = BlogPost.objects.count()
     num_authors = Author.objects.count()
     num_comments = Comment.objects.count()
+    num_topics = Topic.objects.count()
     
     context = {
         'num_blogposts:': num_blogposts,
         'num_authors': num_authors,
         'num_comments': num_comments,
+        'num_topics': num_topics,
     }
 
     return render(request, 'index.html', context=context)
