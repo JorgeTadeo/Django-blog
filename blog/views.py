@@ -11,7 +11,7 @@ def index(request):
     num_topics = Topic.objects.count()
     
     context = {
-        'num_blogposts:': num_blogposts,
+        'num_blogposts': num_blogposts,
         'num_authors': num_authors,
         'num_comments': num_comments,
         'num_topics': num_topics,
