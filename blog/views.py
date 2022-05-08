@@ -21,3 +21,6 @@ def index(request):
 
 class BlogPostView(generic.ListView):
     model = BlogPost
+
+class BlogPostDetailView(generic.DetailView):
+    model = BlogPost
