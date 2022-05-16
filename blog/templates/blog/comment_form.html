@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<p>Post your comment for: <a href="{% url 'blog-post-detail' blogpost.pk %}">{{blogpost.title}}</a></p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" />
+    
+</form>
+{% endblock %}
+
+path('blog/<int:pk>', views.BlogDetailView.as_view(), name='blog-detail'),

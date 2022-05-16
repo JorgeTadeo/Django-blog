@@ -29,7 +29,7 @@ class BlogPost(models.Model):
     
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.title} - {self.author.user}'
+        return f'{self.title} - {self.user.username}'
     
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this post."""
